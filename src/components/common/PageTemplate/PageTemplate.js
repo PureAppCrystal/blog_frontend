@@ -13,7 +13,7 @@ const PageTemplate = ({children}) => {
             <Header/>
             <main>
                 {children}
-            </main>아아하하하하
+            </main>
             <Footer/>
         </div>
     )
