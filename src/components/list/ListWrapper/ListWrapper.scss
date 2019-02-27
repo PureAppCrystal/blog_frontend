@@ -1,0 +1,23 @@
+@import 'utils';
+
+.list-wrapper {
+    width: 1024px;
+    margin: 0 auto;
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include media("<wide") {
+        widtH: 768px;
+    }
+
+    @include media("<large") {
+        widtH: 512px;
+    }
+
+    @include media("<medium") {
+        widtH: 100%;
+    }
+}
