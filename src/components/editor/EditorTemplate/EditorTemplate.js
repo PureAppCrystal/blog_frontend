@@ -1,7 +1,6 @@
 import React, {Component } from 'react';
 import styles from './EditorTemplate.scss';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 
 
 const cx = classNames.bind(styles);
@@ -53,22 +52,20 @@ class EditorTemplate extends Component {
 
         return (
             <div className={cx('editor-template')}>
-                {header}
-                <div className={cx('panes')}>
-                    <div className={cx('pane', 'editor')} style={leftStyle}>
-                        {editor}
-                    </div>
-                    <div className={cx('pane', 'preview')} style={rightStyle} >
-                        {preview}
-                    </div>
-                    <div
-                        className={cx('separator')}
-                        style={separatorStyle}
-                        onMouseDown={handleSeparatorMouseDown}
-                    ></div>
-                    
-                </div>
+            { header }
+            <div className={cx('panes')}>
+            <div className={cx('pane', 'editor')} style={leftStyle}>
+                {editor}
             </div>
+            <div className={cx('pane', 'preview')} style={rightStyle}>
+                {preview}
+            </div>
+            <div 
+                className={cx('separator')} 
+                style={separatorStyle}
+                onMouseDown={handleSeparatorMouseDown}/>
+            </div>
+        </div>
         )
         
      
