@@ -1,1 +1,1 @@
-export { default } from './PostBody';
+export { default } from './EditorTemplate';

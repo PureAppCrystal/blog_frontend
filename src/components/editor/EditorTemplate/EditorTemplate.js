@@ -62,7 +62,7 @@ class EditorTemplate extends Component {
                         {preview}
                     </div>
                     <div
-                        className={CSS('separator')}
+                        className={cx('separator')}
                         style={separatorStyle}
                         onMouseDown={handleSeparatorMouseDown}
                     ></div>
