@@ -8,7 +8,7 @@ import * as api from 'lib/api';
 // action types
 const INITIALIZE = 'editor/INITIALIZE';
 const CHANGE_INPUT = 'editor/CHANGE_INPUT';
-const WRITE_POST ='editor/WRITE_POST';
+const WRITE_POST = 'editor/WRITE_POST';
 
 // action creators
 export const initialize = createAction(INITIALIZE);
@@ -38,5 +38,19 @@ export default handleActions({
             console.log("_id : ", isertedId)
             return state.set('postId', isertedId);
         }
-    })
+    }),
+    ...pender({
+        type: WRITE_POST,
+        onSuccess: (state, action) => {
+          const { _id } = action.payload.data;
+          return state.set('postId', _id);
+        }
+      }),
+      ...pender({
+        type: WRITE_POST,
+        success: (state, action) => {
+          const { _id } = action.payload.data;
+          return state.set('postId', _id);
+        }
+      })
 }, initialState)
