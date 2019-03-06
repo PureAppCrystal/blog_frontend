@@ -25,7 +25,7 @@ class EditorHeaderContainer extends Component {
             title,
             content: markdown,
             // 태그 텍스트를 , 로 분리시키고 앞뒤 공백을 지운 후 중복되는 값을 제기한다.
-            tags: tags === "" ? [] : [...new Set(tags.split(',').map(tag => tag.trim()))]
+            tags: tags
         };
 
         try {

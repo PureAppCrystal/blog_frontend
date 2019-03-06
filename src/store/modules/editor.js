@@ -20,7 +20,7 @@ const initialState = Map({
     title: '',
     markdown: '',
     tags: '',
-    postId: null
+    postId: 0
 });
 
 // reducer
@@ -33,8 +33,10 @@ export default handleActions({
     ...pender({
         type: WRITE_POST,
         onSuccess: (state, action) => {
-            const { _id } = action.payload.data;
-            return state.set('postId', _id);
+            console.log("action.payload.data : ", action.payload.data)
+            const { isertedId } = action.payload.data;
+            console.log("_id : ", isertedId)
+            return state.set('postId', isertedId);
         }
     })
 }, initialState)
