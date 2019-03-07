@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import penderMiddleware from 'redux-pender';
 import * as modules from './modules';
- import { createLogger } from 'redux-logger';
- const logger = createLogger();
+ //import { createLogger } from 'redux-logger';
+ //const logger = createLogger();
 
 const reducers = combineReducers(modules);
 const middlewares = [penderMiddleware()];
@@ -14,7 +14,8 @@ const composeEnhancers = devtools || compose;
 
 // preloadedState는 추후 서버사이드 랜더링을 했을 때 전달받는 초기 상태
 const configure = (preloadedState) => createStore(reducers, preloadedState, composeEnhancers(
-    applyMiddleware(logger, ...middlewares)
+    //applyMiddleware(logger, ...middlewares)
+    applyMiddleware( ...middlewares)
 ))
 
 export default configure;

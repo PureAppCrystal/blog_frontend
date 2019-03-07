@@ -51,9 +51,12 @@ class MarkdownRender extends Component {
 
         // state가 바뀌면 코드 하이라이팅
         if(prevState.html !== this.state.html) {
-            console.log("dd");
             Prism.highlightAll();
         }
+    }
+
+    componentDidMount() {
+        Prism.highlightAll();
     }
 
     render() {

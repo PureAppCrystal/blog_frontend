@@ -34,6 +34,7 @@ export default handleActions({
         type: WRITE_POST,
         onSuccess: (state, action) => {
           console.log("====== editor/WRITE_POST_SUCCESS ======'")
+          // 내가 보내주는 데이터 구조가 다르기 때문
           const { insertId }   = action.payload.data.resultData;
           return state.set('postId', insertId);
         }

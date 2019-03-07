@@ -32,7 +32,7 @@ class EditorHeaderContainer extends Component {
             await EditorActions.writePost(post);
             // 페이지를 이동시킨다. 주의 : postId는 위쪽에서 레퍼런스를 만들지 않고
             // 이 자리에서 this.props.postId를 조회해야한다.(현재값을 불러오기 위해)
-            history.push(`/api/post/${this.props.postId}`);
+            history.push(`/post/${this.props.postId}`);
         } catch(e) {
             console.log(e);
         }
