@@ -33,3 +33,7 @@ export const getPostList = ({tag, page}) =>
 // 포스트 수정
 export const editPost = ({id, title, content, tags, userId=0}) =>
     axios.patch(`/api/posts/${id}`, {title, content, tags, userId});
+
+// 포스트 삭제
+export const removePost = (id) =>
+    axios.delete(`/api/posts/${id}`);
