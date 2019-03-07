@@ -33,24 +33,10 @@ export default handleActions({
     ...pender({
         type: WRITE_POST,
         onSuccess: (state, action) => {
-            console.log("action.payload.data : ", action.payload.data)
-            const { isertedId } = action.payload.data;
-            console.log("_id : ", isertedId)
-            return state.set('postId', isertedId);
+          console.log("====== editor/WRITE_POST_SUCCESS ======'")
+          const { insertId }   = action.payload.data.resultData;
+          return state.set('postId', insertId);
         }
-    }),
-    ...pender({
-        type: WRITE_POST,
-        onSuccess: (state, action) => {
-          const { _id } = action.payload.data;
-          return state.set('postId', _id);
-        }
-      }),
-      ...pender({
-        type: WRITE_POST,
-        success: (state, action) => {
-          const { _id } = action.payload.data;
-          return state.set('postId', _id);
-        }
-      })
+    })
+    
 }, initialState)
