@@ -30,11 +30,11 @@ const PostItem = ({title, body, publishedDate, tags, id}) => {
 const PostList = ({posts}) => {
     const postList = posts.map(
         (post) => {
-            const { postId, title, body, publishedDate, tags } = post.toJS();
+            const { postId, title, content, publishedDate, tags } = post.toJS();
             return (
                 <PostItem
                     title={title}
-                    body={body}
+                    body={content}
                     publishedDate={publishedDate}
                     tags={tags}
                     key={postId}
